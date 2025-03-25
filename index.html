@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мини-приложение для ставок</title>
+  <!-- Подключение скрипта Telegram Web Apps API -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    /* Базовые стили для простого и чистого интерфейса */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Добро пожаловать в Mini App!</h1>
+    <p>Привет, <span id="username">гость</span>!</p>
+  </header>
+  <main>
+    <section id="content">
+      <p>Здесь будут отображаться спортивные новости, аналитика и викторины.</p>
+      <!-- Можно добавить дополнительные блоки, например, разделы с новостями или интерактивными элементами -->
+    </section>
+  </main>
+  <script>
+    // Инициализация Telegram Web App
+    const tg = window.Telegram.WebApp;
+    if (tg.initDataUnsafe.user) {
+      document.getElementById("username").textContent = tg.initDataUnsafe.user.first_name;
+    }
+    // Дополнительная логика для интерактивных элементов или обработки событий можно добавить здесь.
+  </script>
+</body>
+</html>
